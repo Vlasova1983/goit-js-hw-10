@@ -29,7 +29,6 @@ function fetchCountries(name){
 function makeFieldsCountry(country){
     if (country.length>10){
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
-        console.log(country.length);
     } else if (country.length<2){
         const a =  `<div class="contener">   
                         <img class="img" src="${country[0].flags.svg}" alt="${country[0].name}"/>
@@ -44,6 +43,7 @@ function makeFieldsCountry(country){
         const a = `<img class="img" src="${country[0].flags.svg}" alt="${country[0].name}"/>
                     <p class="">${country[0].name}</p> 
                     ` 
+                    console.log(a);
         countryList.insertAdjacentHTML('beforeend', a); 
       }
 }
