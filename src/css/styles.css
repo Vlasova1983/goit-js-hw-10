@@ -20,25 +20,31 @@ body {
 }
 
 .country-list {
-display: flex;
+/* display: flex; */
 margin-top: -20px;
 margin-left: -20px;
 align-items: center;
-
-
 }
+
 .img {
 height: 20px;
 width: 30px;
-margin-right: 5px;
+margin-right: 15px;
 }
 .contener {
   display: flex;  
   align-items: center;
-}
-.country-info {
   font-weight: 700;
   line-height: 1.2;
   font-size: 26px; 
   letter-spacing: 0.03em;
+}
+
+.flex {
+  display: flex;  
+  align-items: center;
+}
+
+.clear {
+  display: none;
 }
