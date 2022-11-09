@@ -1,13 +1,16 @@
 import './css/styles.css';
 import Notiflix from 'notiflix';
-// import API from './fetchCountries';
 
+// import API from './fetchCountries';
+_.debounce(() => {
+    console.log("Scroll handler call after 300ms pause");
+  }, 3000)
 const DEBOUNCE_DELAY = 300;
 const countryList = document.querySelector('.country-list');
 const inputEl = document.querySelector('#search-box');
 inputEl.addEventListener ('input', onInput);
 
-function onInput(){
+function onInput(){   
     fetchCountries(inputEl.value);
 } 
 
