@@ -1,24 +1,19 @@
 import './css/styles.css';
 import Notiflix from 'notiflix';
 
-// import API from './fetchCountries';
-const result = _.add(2, 3);
-console.log(result); // 5
+ import API from './fetchCountries';
+// const result = _.add(2, 3);
+// console.log(result); // 5
 
-_.debounce (() => {
-    console.log("Scroll handler call after 300ms pause");
-  }, 3000)
+const DEBOUNCE_DELAY = 300;
+const countryList = document.querySelector('.country-list');
+const inputEl = document.querySelector('#search-box');
+inputEl.addEventListener ('input', onInput);
 
-
-// const DEBOUNCE_DELAY = 300;
-// const countryList = document.querySelector('.country-list');
-// const inputEl = document.querySelector('#search-box');
-// inputEl.addEventListener ('input', _.debounce(onInput,DEBOUNCE_DELAY));
-
-// function onInput(){  
-//     const countryText = inputEl.value.trim() 
-//     fetchCountries(countryText);
-// } 
+function onInput(){  
+    const countryText = inputEl.value.trim() 
+    API.fetchCountries(countryText);
+} 
 
 // function fetchCountries(name){    
 //     fetch(`https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`)
