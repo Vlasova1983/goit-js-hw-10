@@ -1,10 +1,12 @@
 import './css/styles.css';
 import Notiflix from 'notiflix';
 import API from './fetchCountries';
-const result = _.add(2, 3);
-console.log(result); // 5
+
+// console.log(_.add(2, 3)); 
+
 const DEBOUNCE_DELAY = 300;
-document.querySelector('#search-box').addEventListener ('input', ()=>API.fetchCountries(document.querySelector('#search-box').value.trim()));
+const onInput = document.querySelector('#search-box');
+onInput.addEventListener ('input', ()=>API.fetchCountries(onInput.value.trim()));
 
 
 
