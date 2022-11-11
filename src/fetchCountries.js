@@ -7,7 +7,6 @@ function fetchCountries(name){
         return response.json();
     })
     .then(country=>{
-        console.log(country); 
         if (country.length>10){
             document.querySelector('.country-list').innerHTML=country.map(item=>``).join('');  
             Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
